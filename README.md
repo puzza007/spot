@@ -2,3 +2,7 @@
 
 A skeleton webservice with support for PostgreSQL, AWS S3, JSON
 logging, Datadog telemetry, and Hashicorp Vault
+
+## TODO
+
+* Database library
