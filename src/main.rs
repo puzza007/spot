@@ -1,10 +1,13 @@
 use anyhow::anyhow;
 use axum::{response::IntoResponse, routing::get, Router};
 use axum_tracing_opentelemetry::opentelemetry_tracing_layer;
+use config::Config;
 use serde_json::json;
+use std::collections::HashMap;
 use std::net::SocketAddr;
 use tower_http::trace::TraceLayer;
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
+use vaultrs::client::{VaultClient, VaultClientSettingsBuilder};
 
 async fn health() -> impl IntoResponse {
     axum::Json(json!({ "status" : "UP" }))
@@ -58,6 +61,24 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         ))
         .with(tracing_subscriber::fmt::layer().json())
         .init();
+
+    let settings = Config::builder()
+        // Add in `./Settings.toml`
+        .add_source(config::File::with_name("spot"))
+        .add_source(config::Environment::with_prefix("SPOT"))
+        .build()?;
+
+    tracing::info!(
+        "settings {:?}",
+        settings.try_deserialize::<HashMap<String, String>>()?
+    );
+
+    let _client = VaultClient::new(
+        VaultClientSettingsBuilder::default()
+            .address("https://127.0.0.1:8200")
+            .token("TOKEN")
+            .build()?,
+    )?;
 
     let app = app();
     let addr = &"0.0.0.0:3000".parse::<SocketAddr>()?;
