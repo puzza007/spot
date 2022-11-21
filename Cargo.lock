@@ -384,9 +384,9 @@ dependencies = [
 
 [[package]]
 name = "axum-tracing-opentelemetry"
-version = "0.5.0"
+version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f1d1154e21a04949ed59f865206c1c13e56e1001627a7ed5af06cf450edddca3"
+checksum = "e31f51f6d91290b4879201ffeb261c1af882121aa02de4b0a0c00bed59caadb1"
 dependencies = [
  "axum",
  "http",
