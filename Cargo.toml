@@ -21,4 +21,4 @@ tracing-subscriber = { version = "0.3.16", features = ["env-filter", "json"] }
 tower-http = { version = "0.3.4", features = ["tokio", "trace", "metrics", "request-id"] }
 anyhow = { version = "1.0.66", features = ["backtrace"] }
 vaultrs = "0.6.2"
-config = "0.13.2"
+config = "0.13.3"
