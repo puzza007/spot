@@ -5,7 +5,7 @@ edition = "2021"
 
 [dependencies]
 aws-sdk-s3 = "0.21"
-axum = { version = "0.5", features = ["http2"] }
+axum = { version = "0.6", features = ["http2"] }
 tracing = "0.1"
 axum-tracing-opentelemetry = "0.5"
 datadog-logs = { version = "0.2", features = ["reqwest", "tokio"] }
