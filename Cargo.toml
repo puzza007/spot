@@ -18,7 +18,7 @@ serde_json = "1"
 sqlx = { version = "0.6", features = ["runtime-tokio-native-tls", "postgres", "uuid", "time", "json"] }
 tokio = { version = "1", features = ["full"] }
 tracing-subscriber = { version = "0.3.16", features = ["env-filter", "json"] }
-tower-http = { version = "0.3.5", features = ["tokio", "trace", "metrics", "request-id"] }
+tower-http = { version = "0.4.0", features = ["tokio", "trace", "metrics", "request-id"] }
 anyhow = { version = "1.0.69", features = ["backtrace"] }
 vaultrs = "0.6.2"
 config = "0.13.3"
