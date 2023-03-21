@@ -10,7 +10,7 @@ tracing = "0.1"
 axum-tracing-opentelemetry = "0.10"
 datadog-logs = { version = "0.2", features = ["reqwest", "tokio"] }
 log = { version = "0.4", features = ["serde"] }
-reqwest = { version = "0.11.14", features = ["gzip", "json", "deflate", "tokio-util"] }
+reqwest = { version = "0.11.15", features = ["gzip", "json", "deflate", "tokio-util"] }
 opentelemetry-datadog = { version = "0.6.0", features = ["reqwest", "reqwest-client"] }
 opentelemetry = { version = "0.18.0", features = ["rt-tokio", "metrics", "trace"] }
 serde = { version = "1", features = ["derive"] }
