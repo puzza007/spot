@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-aws-sdk-s3 = "0.25"
+aws-sdk-s3 = "0.27"
 axum = { version = "0.6", features = ["http2"] }
 tracing = "0.1"
 axum-tracing-opentelemetry = "0.10"
